@@ -49,4 +49,54 @@ $('.button_mini').each(function(i) {
 		$('.overlay, #order').fadeIn('slow');
 	})
 });
+
+ function validateForms (form) {
+	$(form).validate({
+		rules: {
+			name: {
+			  required: true,
+			  minlength: 3
+			},
+			phone: "required",
+			email: {
+				required: true,
+				email: true
+			  }
+		  },
+		  messages: {
+			name:  {
+			  required: "Введите свое имя",
+			  minlength: jQuery.validator.format("Введите {0} символа!")
+			  },
+			phone: "Введите свой номер телефона",
+			email: {
+				required: "Введите свою почту",
+				email: "Введен неверный адрес почты"
+			  }
+		  }
+   	 	});
+	};
+
+	validateForms('#consultation-form');
+	validateForms('#consultation form');
+	validateForms('#order-form');
+
+	$('input[name=phone]').mask("+7 (999) 999-99-99");
+
+	$(window).scroll(function() {
+		if($(this).scrollTop() > 1600) {
+			$('.pageup').fadeIn();
+		}	else {
+			$('.pageup').fadeOut();
+		}
+	});
+
+	$("a[href^='#']").click(function(){
+		var _href = $(this).attr("href");
+		$("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+		return false;
+	});
+
+	new WOW().init();
 });
+

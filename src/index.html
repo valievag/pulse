@@ -9,10 +9,11 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/font.css">
 	<link rel="stylesheet" href="css/slick.css">
+	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
-	<section class="promo">
+	<section id="up"class="promo">
 		<div class="container">
 			<header class="header">
 				<a href="#" class="header__logo">
@@ -75,7 +76,7 @@
 					</div>
 				</div>
 				<div class="advantages__item">
-					<img src="icons/advantages/heart.png" alt="heart" class="advantages__icon">
+					<img src="icons/advantages/heart.png" alt="heart" class="advantages__icon advantages__icon_animated">
 					<div class="advantages__subtitle">
 						Заботимся о здоровье
 					</div>
@@ -110,9 +111,9 @@
 				Просто заполните форму заявки<br> 
 				и мы перезвоним вам в течении 10 минут
 			</div>
-			<form class="feed-form feed-form_mt25" action="#">
+			<form id="consultation-form"  class="feed-form" action="#">
 				<input name="name" required placeholder="Ваше имя" type="text"> 
-				<input name="phone" required placeholder="Ваш телефон" type="number"> 
+				<input name="phone" required placeholder="Ваш телефон"> 
 				<input name="email" required placeholder="Ваш E-mail" type="email"> 
 
 				<button class="button button_submit">заказать консультацию</button>
@@ -448,7 +449,7 @@
 	<section class="feed">
 		<div class="container">
 			<h2 class="title">отзывы клиентов</h2>
-			<div class="feed__item">
+			<div class="feed__item fadeInUp wow data-wow-duration="2s" data-wow-delay="1s"">
 				<img src="img/feed_1.png" alt="feed" class="feed__img">
 				<div class="feed__text">
 					<div class="feed__subtitle">Ирина Иванченко 
@@ -462,7 +463,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="feed__item">
+			<div class="feed__item fadeInUp wow data-wow-duration="2s" data-wow-delay="1s"">
 				<img src="img/feed_2.png" alt="feed" class="feed__img">
 				<div class="feed__text">
 					<div class="feed__subtitle">Иван Сёмочкин</div>
@@ -474,7 +475,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="feed__item">
+			<div class="feed__item fadeInUp wow data-wow-duration="2s" data-wow-delay="1s"">
 				<img src="img/feed_3.png" alt="feed" class="feed__img">
 				<div class="feed__text">
 					<div class="feed__subtitle">Юлия Дашкина</div>
@@ -510,10 +511,10 @@
 			<div class="modal__close">&times;</div>
 			<div class="modal__subtitle">Просто заполните форму заявки</div>
 			<div class="modal__descr">и мы перезвоним вам в течении 10 минут</div>
-			<form class="feed-form" action="#">
-				<input name="name" required placeholder="Ваше имя" type="text"> 
-				<input name="phone" required placeholder="Ваш телефон" type="number"> 
-				<input name="email" required placeholder="Ваш E-mail" type="email"> 
+			<form class="feed-form feed-form_mt25" action="#">
+				<input name="name"  placeholder="Ваше имя" type="text"> 
+				<input name="phone"  placeholder="Ваш телефон"> 
+				<input name="email" placeholder="Ваш E-mail" type="email"> 
 
 				<button class="button button_submit">заказать консультацию</button>
 			</form>
@@ -523,10 +524,10 @@
 			<div class="modal__close">&times;</div>
 			<div class="modal__subtitle">Ваш заказ:</div>
 			<div class="modal__descr">Пульсометр Polar FT1</div>
-			<form class="feed-form" action="#">
-				<input name="name" required placeholder="Ваше имя" type="text"> 
-				<input name="phone" required placeholder="Ваш телефон" type="number"> 
-				<input name="email" required placeholder="Ваш E-mail" type="email"> 
+			<form class="feed-form feed-form_mt25" action="#">
+				<input name="name"  placeholder="Ваше имя" type="text"> 
+				<input name="phone"  placeholder="Ваш телефон"> 
+				<input name="email"  placeholder="Ваш E-mail" type="email"> 
 
 				<button class="button button_submit">купить</button>
 			</form>
@@ -540,13 +541,18 @@
 		</div>
 	</div>
 
-	
+	<a href="#up" class="pageup">
+		<img src="icons/up.svg" alt="up">
+	</a>
 	
 
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<script src="js/slick.min.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/jquery.maskedinput.min.js"></script>
+	<script src="js/wow.min.js"></script>
 	<script src="js/script.js"></script>
 </body>
 </html>
